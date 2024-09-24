@@ -1,3 +1,7 @@
+import { QueryClient } from '@tanstack/react-query';
+
+export const queryClient = new QueryClient();
+
 export async function fetchEvents({ signal, searchTerm }) {
     console.log(searchTerm);
     let url = 'http://localhost:3000/events';
@@ -32,7 +36,7 @@ export async function createNewEvent(eventData) {
         const error = new Error('An error occurred while creating the event');
         error.code = response.status;
         error.info = await response.json();
-        throw error;
+        // throw error;
 
         const { event } = await response.json();
 
