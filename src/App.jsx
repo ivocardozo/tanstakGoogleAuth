@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
 } from 'react-router-dom';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
-
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import Events from './components/Events/Events.jsx';
 import EventDetails from './components/Events/EventDetails.jsx';
 import NewEvent from './components/Events/NewEvent.jsx';
@@ -41,9 +41,12 @@ const router = createBrowserRouter([
 
 function App() {
   return (
+    <GoogleOAuthProvider clientId="913528233277-erdag2nqhs9l5mnmn2lh7nae6lnblefp.apps.googleusercontent.com">
+
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
     </QueryClientProvider>
+    </GoogleOAuthProvider>
   );
 }
 

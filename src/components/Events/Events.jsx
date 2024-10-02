@@ -4,6 +4,7 @@ import Header from '../Header.jsx';
 import EventsIntroSection from './EventsIntroSection.jsx';
 import FindEventSection from './FindEventSection.jsx';
 import NewEventsSection from './NewEventsSection.jsx';
+import Login from '../Login/Login.jsx';
 
 export default function Events() {
   return (
@@ -19,6 +20,7 @@ export default function Events() {
         <NewEventsSection />
         <FindEventSection />
       </main>
+      <Login />
     </>
   );
 }
